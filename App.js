@@ -186,7 +186,7 @@ export default function App() {
       receiver: 2
     },
   ]
-console.log("chat", chat);
+
 
   return (
     <View style={styles.container}>
