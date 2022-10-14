@@ -173,7 +173,7 @@ export default function App() {
     {
       chat: 'dgvndfivdiuvnibvdfbvdbvbihv',
       sender: 2,
-      receiver: 1
+      receiver: 2
     },
     {
       chat: 'dgvndfivdiuvnibvdfbvdbvbihv',
@@ -183,10 +183,10 @@ export default function App() {
     {
       chat: 'dgvndfivdiuvnibvdfbvdbvbihv',
       sender: 2,
-      receiver: 1
+      receiver: 2
     },
   ]
-
+console.log("chat", chat);
 
   return (
     <View style={styles.container}>
