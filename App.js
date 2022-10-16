@@ -7,10 +7,11 @@ export default function App() {
     {
       chat: 'dgvndfivdiuvnibvdfbvdbvbihv',
       sender: 1,
-      receiver: 2
+      receiver: 2,
+      time: "12:35"
     },
     {
-      chat: 'dgvndfivdiuvnibvdfbvdbvbihv',
+      chat: 'dgvndfivdiuvnibvdfbvdbvbihvidshiuhguhguhguhfughdughudfhgudhguhguhrugh',
       sender: 2,
       receiver: 1
     },
@@ -193,8 +194,11 @@ export default function App() {
       <ScrollView>
         {chat.map(i => {
           return (
-            <View  key ={Math.random()} style = {i.sender == 1?styles.chatbox : styles.chatbox1}>
-              <Text style={i.sender == 1 ?styles.text : styles.text1} key={Math.random()}>{i.chat}</Text>
+            <View key={Math.random()} style={i.sender == 1 ? styles.chatbox : styles.chatbox1}>
+              <View style= {{flex:1, flexDirection: 'column', textAlign: 'center'}}>
+                <Text style={i.sender == 1 ? styles.text : styles.text1} key={Math.random()}>{i.chat}</Text>
+              </View>
+              <Text style={styles.time} key={Math.random()}>{i.time}</Text>
             </View>
           );
         })}
@@ -205,44 +209,61 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
+    position: 'relative',
     backgroundColor: '#eee',
     padding: 10,
-    justifyContent: "center"
   },
-  chatbox:{
-    alignContent: "center",
-    alignItems: "left",
-  },
-  chatbox1:{
-    alignContent: "space-around",
-    alignItems: "right",
+  chatbox: {
+    position: 'realtive',
+    backgroundColor: "#adcadc",
+    borderWidth: 0,
+    borderColor: '#adcadc',
+    borderBottomRightRadius: 10,
+    borderBottomLeftRadius: 10,
+    borderTopLeftRadius: 10,
+    padding: 0,
+    margin: 5,
+    alignSelf: "flex-end",
+    alignContent: 'center',
 
-    
+
+
+  },
+  chatbox1: {
+    backgroundColor: "#83ebc1",
+    borderWidth: 2,
+    borderColor: '#ccc',
+    borderBottomRightRadius: 10,
+    borderBottomLeftRadius: 10,
+    borderTopRightRadius: 10,
+    padding: 0,
+    margin: 5,
+    alignSelf: "flex-start",
+
   },
   text: {
     color: 'black',
-    backgroundColor: "white",
-    borderWidth: 1,
     padding: 5,
-    borderColor: '#6564hg',
-    borderBottomRightRadius:5,
-    borderBottomLeftRadius:5,
-    borderTopLeftRadius:5,
     margin: 2,
     fontSize: 16
+
   },
   text1: {
     color: 'black',
-    backgroundColor: "#83ebc1",
-    borderWidth: 1,
     padding: 5,
-    borderColor: '#ccc',
-    borderBottomRightRadius:5,
-    borderBottomLeftRadius:5,
-    borderTopRightRadius:5,
     margin: 2,
-    fontSize: 16,
+    fontSize: 16
+  },
+  time: {
+    color: 'black',
+    margin: 0,
+    fontSize: 10,
+    textAlign: 'right',
+    backgroundColor: "#dedede",
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+    paddingHorizontal: 10
+
   },
   button: {
     borderWidth: 2,
@@ -250,6 +271,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: "blue",
     margin: 10,
-    padding: 10
+    padding: 10,
+
   }
 });
